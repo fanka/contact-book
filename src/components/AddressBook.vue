@@ -2,8 +2,10 @@
   <div class="container">
   <div class="row">
     <div class="col-4">
-      <search></search>
+      <h2>Contacts</h2>
+      <search :contacts.sync="contacts"></search>
       <list :contacts.sync="contacts"></list>
+      <router-link :to="{ name: 'contact/new'}">New contact</router-link>
     </div>
     <div class="col-8">
     <router-view :contacts.sync="contacts"></router-view>
@@ -22,13 +24,31 @@ export default {
     return {
     contacts: [
       {id: 1,
-      name: 'Lonneke Faber',},
+      name: 'Lonneke Faber',
+      email: 'lonneke.faber@wonderkind.com',
+      tel: '06-12345678',
+      address: '',
+      },
       {id: 2,
-      name: 'Don Kooijman',},
+      name: 'Don Kooijman',
+      email: 'don.kooijman@wonderkind.com',
+      tel: '06-12345678',
+      address: '',
+      },
       {id: 3,
-      name: 'Amar Muric',},
+      name: 'Amar Muric',
+      email: 'amar.muric@wonderkind.com',
+      tel: '06-12345678',
+      address: '',
+      },
     ],
 
+    }
+  },
+  mounted () {
+    const contacts = JSON.parse(this.$localStorage.get('contacts'))
+    if (contacts) {
+      this.contacts = contacts
     }
   },
   components: {
@@ -41,18 +61,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+.container {
+margin-top:120px;
+
 }
 </style>

@@ -1,12 +1,26 @@
 <template>
   <div>
-    <div v-for="contact in contacts">
-      <div v-if="contact.id == id">
-        <button v-on:click="editContact(contact)" >Edit</button>
-        <button v-on:click="deleteContact(contact)" >Delete</button>
-        <div>{{ contact.name }}</div>
+    <div v-if="user" v-for="contact in contacts">
+      <div v-if="contact.id === user.id">
+        <div class="d-flex flex-row justify-content-around">
+          <div>Avatar</div>
+          <h2>{{ contact.name }}</h2>
+          <div>
+            <router-link :to="{ name: 'contact/:id/edit', params: { id: contact.id }}">
+              Edit
+            </router-link>
+            <button v-on:click="deleteContact(contact)" >Delete</button>
+          </div>
+        </div>
+      <div class="details-info">
+        <h4>Email:</h4>
+        <div>{{ contact.email }}</div>
+        <h4>Mobile:</h4>
+        <div>{{ contact.tel }}</div>
+      </div>
       </div>
     </div>
+    <router-view :contacts.sync="contacts"></router-view>
 
   </div>
 </template>
@@ -15,19 +29,18 @@
 export default {
   name: 'ContactDetails',
   props: {
-    id: String,
     contacts: Array
   },
   data () {
     return {
-      contact: null
+      user: null
     }
   },
   methods: {
     setContact() {
         this.contacts.map((entry)=> {
-            if (entry.id == this.id) {
-              this.contact = entry
+            if (entry.id == parseInt(this.$route.params.id)) {
+              this.user = entry
             }
         })
       },
@@ -38,6 +51,7 @@ export default {
         var index = this.contacts.indexOf(item);
         if (index > -1) {
         this.contacts.splice(index, 1)
+        this.$localStorage.set('contacts', JSON.stringify(this.contacts))
         }
       },
     },
@@ -53,5 +67,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.details-info {
+margin-top:40px;
+}
 </style>
