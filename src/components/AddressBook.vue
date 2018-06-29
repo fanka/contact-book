@@ -5,7 +5,7 @@
       <h2>Contacts</h2>
       <search :contacts.sync="contacts"></search>
       <list :contacts.sync="contacts"></list>
-      <router-link :to="{ name: 'contact/new'}">New contact</router-link>
+      <router-link :to="{ name: 'contact/new'}"><div class="add-button">New contact</div></router-link>
     </div>
     <div class="col-8">
     <router-view :contacts.sync="contacts"></router-view>
@@ -64,5 +64,12 @@ export default {
 .container {
 margin-top:120px;
 
+}
+.add-button {
+margin-top:60px;
+width:100%;
+background-color: green;
+color: #fff;
+height:40px;
 }
 </style>

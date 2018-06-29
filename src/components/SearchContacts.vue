@@ -53,4 +53,9 @@ export default {
   li {
   list-style-type: none;
   }
+  input {
+  width: 80%;
+  height: 40px;
+  border-radius: 10px;
+  }
 </style>
