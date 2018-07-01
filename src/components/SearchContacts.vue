@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="search" v-model="searchContactName" />
+    <input type="search" v-model="searchContactName" placeholder="Search" />
   <ul v-for="contact in filteredContacts">
     <li>
       <router-link :to="/contact/+contact.id">
@@ -57,5 +57,6 @@ export default {
   width: 80%;
   height: 40px;
   border-radius: 10px;
+  padding-left:30%;
   }
 </style>

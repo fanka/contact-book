@@ -3,9 +3,9 @@
   <div v-for="contact in contacts">
     <div v-if="contact.id === user.id">
     <router-link :to="{ name: 'contact/:id/', params: { id: contact.id }}">
-      Save
+      <span class="btn btn-success">Save</span>
     </router-link>
-      <button v-on:click="deleteContact(contact)" >Delete</button>
+      <button v-on:click="deleteContact(contact)" class="btn btn-danger">Delete</button>
       <div>
         <input v-model="contact.name" placeholder="Edit name">
       </div>
@@ -69,5 +69,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+input {
+  width: 250px;
+  padding: 0 5px;
+  height: 40px;
+  border-radius: 10px;
+  margin-top:20px;
+}
 </style>

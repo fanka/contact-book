@@ -44,5 +44,32 @@ export default {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  overflow-y:scroll;
+  height:300px;
+  padding-top: 20px;
+  padding-bottom:20px;
   }
+
+  ol::-webkit-scrollbar {
+
+      width: 20px;
+  }
+
+
+  ol::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      width:90%;
+  }
+
+
+  ol::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 10px;
+      min-height:40px;
+  }
+  ol::-webkit-scrollbar-thumb:window-inactive {
+    background:rgba(0,0,0,0.3);
+  }
+
+
 </style>

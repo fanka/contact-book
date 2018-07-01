@@ -12,7 +12,7 @@
       <div>
         <input v-model="contact.address" placeholder="Enter address">
       </div>
-      <button v-on:click="addContact">Add Contact</button>
+      <button v-on:click="addContact" class="btn btn-success">Add Contact</button>
 
 
 
@@ -54,5 +54,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+input {
+  width: 250px;
+  padding: 0 5px;
+  height: 40px;
+  border-radius: 10px;
+  margin-top:20px;
+}
 </style>

@@ -1,13 +1,13 @@
 <template>
   <div class="container">
   <div class="row">
-    <div class="col-4">
+    <div class="col-md-4">
       <h2>Contacts</h2>
       <search :contacts.sync="contacts"></search>
       <list :contacts.sync="contacts"></list>
-      <router-link :to="{ name: 'contact/new'}"><div class="add-button">New contact</div></router-link>
+      <router-link :to="{ name: 'contact/new'}"><div class="add-button"><img class="new-icon d-inline" v-bind:src="'/static/add.png'"> ADD CONTACT</div></router-link>
     </div>
-    <div class="col-8">
+    <div class="col-md-8">
     <router-view :contacts.sync="contacts"></router-view>
     </div>
   </div>
@@ -62,14 +62,19 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .container {
-margin-top:120px;
+  margin-top:120px;
 
 }
 .add-button {
-margin-top:60px;
-width:100%;
-background-color: green;
-color: #fff;
-height:40px;
+
+  width:100%;
+  background-color: #5dbf49;
+  color: #fff;
+  height:auto;
+  padding:10px;
+}
+.new-icon {
+  width:25px;
+  height:25px;
 }
 </style>

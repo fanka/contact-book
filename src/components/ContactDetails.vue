@@ -1,25 +1,6 @@
 <template>
   <div>
-    <div v-if="!user">
-    <div>
-      <div class="d-flex flex-row justify-content-around">
-        <img class="avatar" v-bind:src="'/static/avatar.png'">
-        <h1 v-bind:style="fontFamily ='Poppins-Black'">{{ contacts[0].name }}</h1>
-        <div>
-          <router-link :to="{ name: 'contact/:id/edit', params: { id: contacts[0].id }}">
-            <img class="button" v-bind:src="'/static/edit.png'">
-          </router-link>
-          <img class="button" v-bind:src="'/static/delete.png'" v-on:click="deleteContact(contacts[0])">
-        </div>
-      </div>
-    <div class="details-info">
-      <h4>Email:</h4>
-      <div>{{ contacts[0].email }}</div>
-      <h4>Mobile:</h4>
-      <div>{{ contacts[0].tel }}</div>
-    </div>
-    </div>
-    </div>
+
     <div v-if="user" v-for="contact in contacts">
       <div v-if="contact.id === user.id">
         <div class="d-flex flex-row justify-content-around">
@@ -41,8 +22,8 @@
       </div>
     </div>
     <router-view :contacts.sync="contacts"></router-view>
-
   </div>
+
 </template>
 
 <script>
@@ -77,6 +58,7 @@ export default {
     },
   created(){
     this.setContact()
+
   },
   updated(){
     this.setContact()
