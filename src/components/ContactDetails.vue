@@ -4,7 +4,7 @@
     <div v-if="user" v-for="contact in contacts">
       <div v-if="contact.id === user.id">
         <div class="d-flex flex-row justify-content-around">
-          <img class="avatar" v-bind:src="'/static/avatar.png'">
+          <img class="avatar" v-bind:src="'./static/avatar.png'">
           <h1 v-bind:style="fontFamily ='Poppins-Black'">{{ contact.name }}</h1>
           <div>
             <router-link :to="{ name: 'contact/:id/edit', params: { id: contact.id }}">

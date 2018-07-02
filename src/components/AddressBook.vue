@@ -5,7 +5,7 @@
       <h2>Contacts</h2>
       <search :contacts.sync="contacts"></search>
       <list :contacts.sync="contacts"></list>
-      <router-link :to="{ name: 'contact/new'}"><div class="add-button"><img class="new-icon d-inline" v-bind:src="'/static/add.png'"> ADD CONTACT</div></router-link>
+      <router-link :to="{ name: 'contact/new'}"><div class="add-button"><img class="new-icon d-inline" v-bind:src="'./static/add.png'"> ADD CONTACT</div></router-link>
     </div>
     <div class="col-md-8">
     <router-view :contacts.sync="contacts"></router-view>
