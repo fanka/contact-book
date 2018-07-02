@@ -7,6 +7,9 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import VueLocalStorage from 'vue-localstorage'
+import Vue2Filters from 'vue2-filters'
+
+Vue.use(Vue2Filters)
 
 Vue.use(VueLocalStorage)
 

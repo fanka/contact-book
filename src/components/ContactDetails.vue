@@ -14,10 +14,12 @@
           </div>
         </div>
       <div class="details-info">
-        <h4>Email:</h4>
+        <h4 class="mt-3">Email:</h4>
         <div>{{ contact.email }}</div>
-        <h4>Mobile:</h4>
+        <h4 class="mt-3">Mobile:</h4>
         <div>{{ contact.tel }}</div>
+        <h4 v-if="contact.address != ''" class="mt-3">Address:</h4>
+        <div>{{ contact.address }}</div>
       </div>
       </div>
     </div>

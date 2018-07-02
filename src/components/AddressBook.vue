@@ -18,6 +18,7 @@
 import ContactsList from './ContactsList'
 import ContactDetails from './ContactDetails'
 import SearchContacts from './SearchContacts'
+import WelcomeMessage from './WelcomeMessage'
 export default {
   name: 'AddressBook',
   data () {
@@ -54,7 +55,8 @@ export default {
   components: {
     list: ContactsList,
     contactDetails: ContactDetails,
-    search: SearchContacts
+    search: SearchContacts,
+    welcomeMessage: WelcomeMessage,
   }
 }
 </script>
@@ -76,5 +78,8 @@ export default {
 .new-icon {
   width:25px;
   height:25px;
+}
+.container {
+max-height: 600px;
 }
 </style>

@@ -4,6 +4,7 @@ import AddressBook from '@/components/AddressBook'
 import ContactDetails from '@/components/ContactDetails'
 import EditContact from '@/components/EditContact'
 import AddContact from '@/components/AddContact'
+import WelcomeMessage from '@/components/WelcomeMessage'
 
 Vue.use(Router)
 
@@ -14,6 +15,10 @@ export default new Router({
       name: 'AddressBook',
       component: AddressBook,
       children: [
+        { path: "",
+        component: WelcomeMessage,
+        name: "welcome-message",
+        },
         { path: "contact/:id",
         component: ContactDetails,
         name: "contact/:id/",

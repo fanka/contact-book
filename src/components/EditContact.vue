@@ -2,10 +2,13 @@
 <div>
   <div v-for="contact in contacts">
     <div v-if="contact.id === user.id">
+    <div class="buttons-container">
     <router-link :to="{ name: 'contact/:id/', params: { id: contact.id }}">
-      <span class="btn btn-success">Save</span>
+      <span class="btn btn-success mb-2 mr-2">Save</span>
     </router-link>
-      <button v-on:click="deleteContact(contact)" class="btn btn-danger">Delete</button>
+
+      <button v-on:click="deleteContact(contact)" class="btn btn-danger mb-2">Delete</button>
+      </div>
       <div>
         <input v-model="contact.name" placeholder="Edit name">
       </div>
@@ -76,5 +79,10 @@ input {
   height: 40px;
   border-radius: 10px;
   margin-top:20px;
+}
+@media (max-width: 600px) {
+  .buttons-container {
+    margin-top:30px;
+  }
 }
 </style>
