@@ -17,9 +17,6 @@
         <input v-model="contact.address" placeholder="Enter address">
       </div>
       <button v-on:click="addContact" class="btn btn-success mt-4">Add Contact</button>
-
-
-
 </div>
 </template>
 
@@ -28,7 +25,7 @@
 export default {
   name: 'AddContact',
   props: {
-  contacts: Array,
+    contacts: Array
   },
   data () {
     return {
@@ -36,10 +33,10 @@ export default {
 
     }
   },
-  created(){
+  created() {
 
   },
-  updated(){
+  updated() {
 
   },
   watch: {
@@ -47,10 +44,10 @@ export default {
   },
   methods: {
     addContact() {
-      this.contact.id = this.contacts[this.contacts.length-1].id + 1
+      this.contact.id = this.contacts[this.contacts.length - 1].id + 1
       this.contacts.push(this.contact)
       this.$localStorage.set('contacts', JSON.stringify(this.contacts))
-    },
+    }
 
   },
   components: {}

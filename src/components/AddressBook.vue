@@ -23,26 +23,26 @@ export default {
   name: 'AddressBook',
   data () {
     return {
-    contacts: [
-      {id: 1,
-      name: 'Lonneke Faber',
-      email: 'lonneke.faber@wonderkind.com',
-      tel: '06-12345678',
-      address: '',
-      },
-      {id: 2,
-      name: 'Don Kooijman',
-      email: 'don.kooijman@wonderkind.com',
-      tel: '06-12345678',
-      address: '',
-      },
-      {id: 3,
-      name: 'Amar Muric',
-      email: 'amar.muric@wonderkind.com',
-      tel: '06-12345678',
-      address: '',
-      },
-    ],
+      contacts: [
+        {id: 1,
+          name: 'Lonneke Faber',
+          email: 'lonneke.faber@wonderkind.com',
+          tel: '06-12345678',
+          address: ''
+        },
+        {id: 2,
+          name: 'Don Kooijman',
+          email: 'don.kooijman@wonderkind.com',
+          tel: '06-12345678',
+          address: ''
+        },
+        {id: 3,
+          name: 'Amar Muric',
+          email: 'amar.muric@wonderkind.com',
+          tel: '06-12345678',
+          address: ''
+        }
+      ]
 
     }
   },
@@ -56,7 +56,7 @@ export default {
     list: ContactsList,
     contactDetails: ContactDetails,
     search: SearchContacts,
-    welcomeMessage: WelcomeMessage,
+    welcomeMessage: WelcomeMessage
   }
 }
 </script>

@@ -1,9 +1,6 @@
 <template>
 <div>
   <h2>Please, select a contact from the list on the left to see detailed information.</h2>
-
-
-
 </div>
 </template>
 
@@ -20,10 +17,10 @@ export default {
 
     }
   },
-  created(){
+  created() {
 
   },
-  updated(){
+  updated() {
 
   },
   watch: {

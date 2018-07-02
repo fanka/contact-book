@@ -23,7 +23,7 @@
       </div>
       </div>
     </div>
-    <router-view :contacts.sync="contacts"></router-view>
+
   </div>
 
 </template>
@@ -41,8 +41,8 @@ export default {
   },
   methods: {
     setContact() {
-        this.contacts.map((entry)=> {
-            if (entry.id == parseInt(this.$route.params.id)) {
+        this.contacts.map((entry) => {
+            if (entry.id === parseInt(this.$route.params.id)) {
               this.user = entry
             }
         })
